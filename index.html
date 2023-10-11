@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <!-- Auth -->
+        <div id="user-pin-section">
+            <h1>Please Enter your pin</h1>
+            <input type="number" id="user-pin">
+            <input type="submit" id="user-pin-submit">
+            <p id="user-pin-value"></p>
+            <p id="pin-response"></p>
+        </div>
+       <!-- Chose options -->
+        <div id="choose-para" style="display: none;">
+            <p>Please Choose your options</p>
+            <select name="options" id="option-items">
+                    <option value="withdraw">Withdraw</option>
+                    <option value="checkbalance">Check Balance</option>
+                    <option value="transfer">Transfer Account</option>
+                    <option value="changepin">Change Pin</option>
+                    <option value="exit">Exit</option>
+            </select>
+
+            <p id="selected-item"></p>
+        </div>
+
+        <!-- Withdraw option -->
+        <div style="display: none;" id="withdraw-option-section">
+            <p id="withdraw-para">Enter withdrawal amount (in multiples of 500):</p>
+            <input type="number" id="user-withdraw-amount">
+            <input type="submit" id="user-withdraw-submit">
+            <p id="user-withdraw-amount-response"></p>
+        </div>
+
+        <!-- Check Balancce Are -->
+        <div style="display: none;" id="user-check-balance">
+                <p id="user-check-balance-para"></p>
+        </div>
+
+        <!-- Transfer functionality -->
+        <div style="display: none;" id="user-amount-transfer">
+            <input type="text" id="user-amount-transfer-number" maxlength="13">
+            <input type="submit" id="user-amount-transfer-verify" value="Verify">
+            <p id="user-amount-transfer-para"></p>
+        </div>
+        <div id="user-transfer" style="display: none;">
+            <p id="user-transfer-para"></p>
+            <input type="text" id="user-amount">
+            <input type="button" id="user-amount-transfer-new" value="Transfer">
+            <p id="user-transfer-response"></p>
+        </div>
+
+        <!-- User Reset Pin -->
+        <div style="display: none;" id="user-reset-pin">
+             <p id="user-reset-pin-para">Enter your old 4-digit PIN:</p>
+             <input type="number" id="user-reset-pin-old">
+             <input type="button" id="user-reset-pin--verify-button" value="Verify">
+             <p id="user-reset-pin-response"></p>
+        </div>
+
+        <div style="display: none;" id="user-submit-new-pin">
+             <p id="user-submit-new-pin-para">Enter your new 4-digit PIN:</p>
+             <input type="number" id="user-reset-pin-new">
+             <input type="button" id="user-submit-new-pin-button" value="Change">
+             <p id="user-update-pin-response"></p>
+        </div>
+
+        <!-- Next Proceed Area -->
+            <div style="display: none;" id="user-next-proceed">
+                    <p id="user-next-proceed-para">Are You want to proceed further?</p>
+                    <input type="submit" id="user-next-proceed-button-yes" value="Yes">
+                    <input type="submit" id="user-next-proceed-button-no" value="No">
+            </div>
+
+        <!-- Thank You Program Close Area -->
+            <div style="display: none;" id="user-thankyou">
+                    <p>Thank You</p>
+            </div>
+    </main>
+    <script src="practice.js"></script>
+</body>
+</html>
