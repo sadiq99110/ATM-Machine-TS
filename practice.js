@@ -216,7 +216,3 @@ function handleNextProceedNo() {
     hideElement(userSubmitPinSection);
     hideElement(userCheckBalance);
 }
-// If you have any other event listeners or functions, you can continue to add them below.
-// Example:
-// SomeEventListener.addEventListener('click', handleSomeEvent);
-// Or define more functions as needed.

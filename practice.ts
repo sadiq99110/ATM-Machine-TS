@@ -1,15 +1,15 @@
-let pinAttempts = 3;
-let accountBalance = 10000;
-const accountNumbers = [
+let pinAttempts: number = 3;
+let accountBalance: number = 10000;
+const accountNumbers: string[] = [
   "1234567890123",
   "9876543210987",
   "5555555555555",
   // Add more account numbers as needed
 ];
 
-let correctPin = "1234";
+let correctPin: string = "1234";
 
-function getElementById(id) {
+function getElementById(id : string) {
   return document.getElementById(id);
 }
 
@@ -109,7 +109,7 @@ function handlePinSubmit() {
   }
 }
 
-function handleOptionChange(event) {
+function handleOptionChange(event) : void {
   const selectedItem = event.target.value;
   switch (selectedItem) {
     case "withdraw":
@@ -135,7 +135,7 @@ function handleOptionChange(event) {
   }
 }
 
-function handleWithdraw() {
+function handleWithdraw() : void {
   let withdrawAmount = parseInt(userWithDrawAmount.value);
 
   if (!isNaN(withdrawAmount) && withdrawAmount >= 500 && withdrawAmount <= 25000 && withdrawAmount <= accountBalance) {
@@ -147,7 +147,7 @@ function handleWithdraw() {
   }
 }
 
-function withdraw() {
+function withdraw() : void {
   showElement(userWithDrawSection);
   userSection.style.display = "none";
   userWithDrawAmount.value = '';
@@ -155,7 +155,7 @@ function withdraw() {
   hideElement(userNextProceed);
 }
 
-function handleTransferSectionVerify() {
+function handleTransferSectionVerify() : void {
   const userEnteredAccountNumber = userTransferSectionAmount.value;
   if (userEnteredAccountNumber.length !== 13) {
     alert('Account number must be 13 characters long.');
@@ -164,7 +164,7 @@ function handleTransferSectionVerify() {
 
     if (isAccountNumberValid) {
       hideElement(userTransferSection);
-      userTransferPara.innerHTML = "Enter the amount you want to transfer";
+      userTransferPara.innerHTML = "Enter the amount you want to transfer"; 
       showElement(userTransfer);
       hideElement(userTransferSectionPara);
     } else {
@@ -173,7 +173,7 @@ function handleTransferSectionVerify() {
   }
 }
 
-function handleTransferAmount() {
+function handleTransferAmount() : void {
   let transferAmount = parseInt(userTransferAmount.value);
   if (!isNaN(transferAmount) && transferAmount >= 1 && transferAmount <= accountBalance) {
     accountBalance -= transferAmount;
@@ -184,12 +184,12 @@ function handleTransferAmount() {
   }
 }
 
-function TransferAmount() {
+function TransferAmount() : void {
   showElement(userTransferSection);
   userSection.style.display = "none";
 }
 
-function handlePinResetVerify() {
+function handlePinResetVerify() : void {
   if (userResetPinOld.value === correctPin) {
     showElement(userSubmitPinSection);
     hideElement(userResetPinSection);
@@ -198,7 +198,7 @@ function handlePinResetVerify() {
   }
 }
 
-function handlePinUpdate() {
+function handlePinUpdate() : void {
   let userNewUpdatePin = userNewPin.value
   if (userNewUpdatePin.length === 4) {
     correctPin = userNewUpdatePin;
@@ -209,19 +209,19 @@ function handlePinUpdate() {
   }
 }
 
-function changePin() {
+function changePin() : void {
   showElement(userResetPinSection);
   userSection.style.display = "none";
 }
 
-function checkBalance() {
+function checkBalance() : void {
   userSection.style.display = 'none';
   showElement(userCheckBalance);
   showElement(userNextProceed);
   userCheckBalancePara.innerHTML = `Your account balance: $${accountBalance}`;
 }
 
-function handleNextProceedYes() {
+function handleNextProceedYes() : void {
   userSection.style.display = 'block';
   hideElement(userNextProceed)
   hideElement(userWithDrawSection);
@@ -232,7 +232,7 @@ function handleNextProceedYes() {
   hideElement(userCheckBalance);
 }
 
-function handleNextProceedNo() {
+function handleNextProceedNo() : void {
   userLastThankYou.style.display = 'block';
   hideElement(userNextProceed)
   hideElement(userWithDrawSection);
@@ -242,10 +242,3 @@ function handleNextProceedNo() {
   hideElement(userSubmitPinSection);
   hideElement(userCheckBalance);
 }
-
-// If you have any other event listeners or functions, you can continue to add them below.
-
-// Example:
-// SomeEventListener.addEventListener('click', handleSomeEvent);
-
-// Or define more functions as needed.
