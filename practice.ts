@@ -24,6 +24,9 @@ function hideElement(element) {
 // Pin Validation
 let userPinSection = getElementById('user-pin-section');
 let userPinValue = getElementById('user-pin') as HTMLInputElement
+let userPinError = document.getElementById('error-message') as HTMLParagraphElement
+let userPinErrorOld = document.getElementById('error-message-old') as HTMLParagraphElement
+let userPinErrorNew = document.getElementById('error-message-new') as HTMLParagraphElement
 let userPinSubmit = getElementById('user-pin-submit') as HTMLInputElement
 let userPinText = getElementById('user-pin-value') as HTMLParagraphElement
 let userPinResponse = getElementById('pin-response') as HTMLParagraphElement
@@ -94,6 +97,7 @@ userNextProceedYes.addEventListener('click', handleNextProceedYes);
 userNextProceedNo.addEventListener('click', handleNextProceedNo);
 
 function handlePinSubmit() {
+  userPinError.innerText = ''
   userPinText.innerText = userPinValue.value;
   if (userPinValue.value === correctPin) {
     userPinResponse.innerText = `Valid pin`;
@@ -190,6 +194,7 @@ function TransferAmount() : void {
 }
 
 function handlePinResetVerify() : void {
+    userPinErrorOld.innerHTML =  ''
   if (userResetPinOld.value === correctPin) {
     showElement(userSubmitPinSection);
     hideElement(userResetPinSection);
@@ -199,6 +204,7 @@ function handlePinResetVerify() : void {
 }
 
 function handlePinUpdate() : void {
+  userPinErrorNew.innerHTML =  ''
   let userNewUpdatePin = userNewPin.value
   if (userNewUpdatePin.length === 4) {
     correctPin = userNewUpdatePin;
@@ -241,4 +247,19 @@ function handleNextProceedNo() : void {
   hideElement(userResetPinSection);
   hideElement(userSubmitPinSection);
   hideElement(userCheckBalance);
+}
+
+function checkPinLength(input, verify) {
+  const userPinValue = input.value;
+  if (userPinValue.length > 4) {
+    input.value = userPinValue.slice(0, 4); // Truncate the input to 4 digits
+    if(verify == "verifyOldPin"){
+      userPinErrorOld.innerHTML =  'PIN must be 4 digits or less'
+    }else if(verify == "newPin"){
+      userPinErrorNew.innerHTML =  'PIN must be 4 digits or less'
+    }
+    userPinError.innerText = 'PIN must be 4 digits or less';
+  } else {
+    userPinError.innerText = ''; // Clear error message
+  }
 }

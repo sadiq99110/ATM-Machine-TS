@@ -10,8 +10,9 @@
         <!-- Auth -->
         <div id="user-pin-section">
             <h1>Please Enter your pin</h1>
-            <input type="number" id="user-pin">
+            <input type="number" id="user-pin" oninput="checkPinLength(this, 'verifyPin')">
             <input type="submit" id="user-pin-submit">
+            <p id="error-message" style="color: red;"></p>
             <p id="user-pin-value"></p>
             <p id="pin-response"></p>
         </div>
@@ -58,15 +59,17 @@
         <!-- User Reset Pin -->
         <div style="display: none;" id="user-reset-pin">
              <p id="user-reset-pin-para">Enter your old 4-digit PIN:</p>
-             <input type="number" id="user-reset-pin-old">
+             <input type="number" id="user-reset-pin-old" oninput="checkPinLength(this, 'verifyOldPin')">
              <input type="button" id="user-reset-pin--verify-button" value="Verify">
+             <p id="error-message-old" style="color: red;"></p>
              <p id="user-reset-pin-response"></p>
         </div>
 
         <div style="display: none;" id="user-submit-new-pin">
              <p id="user-submit-new-pin-para">Enter your new 4-digit PIN:</p>
-             <input type="number" id="user-reset-pin-new">
+             <input type="number" id="user-reset-pin-new" oninput="checkPinLength(this, 'newPin')">
              <input type="button" id="user-submit-new-pin-button" value="Change">
+             <p id="error-message-new" style="color: red;"></p>
              <p id="user-update-pin-response"></p>
         </div>
 

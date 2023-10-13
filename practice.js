@@ -19,6 +19,9 @@ function hideElement(element) {
 // Pin Validation
 var userPinSection = getElementById('user-pin-section');
 var userPinValue = getElementById('user-pin');
+var userPinError = document.getElementById('error-message');
+var userPinErrorOld = document.getElementById('error-message-old');
+var userPinErrorNew = document.getElementById('error-message-new');
 var userPinSubmit = getElementById('user-pin-submit');
 var userPinText = getElementById('user-pin-value');
 var userPinResponse = getElementById('pin-response');
@@ -75,6 +78,7 @@ userSubmitNewPin.addEventListener('click', handlePinUpdate);
 userNextProceedYes.addEventListener('click', handleNextProceedYes);
 userNextProceedNo.addEventListener('click', handleNextProceedNo);
 function handlePinSubmit() {
+    userPinError.innerText = '';
     userPinText.innerText = userPinValue.value;
     if (userPinValue.value === correctPin) {
         userPinResponse.innerText = "Valid pin";
@@ -167,6 +171,7 @@ function TransferAmount() {
     userSection.style.display = "none";
 }
 function handlePinResetVerify() {
+    userPinErrorOld.innerHTML = '';
     if (userResetPinOld.value === correctPin) {
         showElement(userSubmitPinSection);
         hideElement(userResetPinSection);
@@ -176,6 +181,7 @@ function handlePinResetVerify() {
     }
 }
 function handlePinUpdate() {
+    userPinErrorNew.innerHTML = '';
     var userNewUpdatePin = userNewPin.value;
     if (userNewUpdatePin.length === 4) {
         correctPin = userNewUpdatePin;
@@ -215,4 +221,20 @@ function handleNextProceedNo() {
     hideElement(userResetPinSection);
     hideElement(userSubmitPinSection);
     hideElement(userCheckBalance);
+}
+function checkPinLength(input, verify) {
+    var userPinValue = input.value;
+    if (userPinValue.length > 4) {
+        input.value = userPinValue.slice(0, 4); // Truncate the input to 4 digits
+        if (verify == "verifyOldPin") {
+            userPinErrorOld.innerHTML = 'PIN must be 4 digits or less';
+        }
+        else if (verify == "newPin") {
+            userPinErrorNew.innerHTML = 'PIN must be 4 digits or less';
+        }
+        userPinError.innerText = 'PIN must be 4 digits or less';
+    }
+    else {
+        userPinError.innerText = ''; // Clear error message
+    }
 }
