@@ -1,0 +1,194 @@
+/* styles.css */
+
+/* Apply styles to the main container */
+main {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+/* Style the heading in the user-pin-section */
+#user-pin-section h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Style the input field in the user-pin-section */
+#user-pin {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Style the submit button in the user-pin-section */
+#user-pin-submit {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style the error message */
+#error-message {
+    color: red;
+}
+
+/* Apply common styles for select and options elements */
+select, option {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Style the options select box */
+#option-items {
+    width: 100%;
+}
+
+/* Style the selected item paragraph */
+#selected-item {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Style the withdraw-para and user-withdraw-amount elements */
+#withdraw-para, #user-withdraw-amount {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Style the user-withdraw-submit button */
+#user-withdraw-submit {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style the user-withdraw-amount-response paragraph */
+#user-withdraw-amount-response {
+    color: green;
+}
+
+/* Style the user-check-balance-para element */
+#user-check-balance-para {
+    font-size: 18px;
+}
+
+/* Style the user-amount-transfer-number and user-amount-transfer-verify elements */
+#user-amount-transfer-number, #user-amount-transfer-verify {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Style the user-amount-transfer-verify button */
+#user-amount-transfer-verify {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style the user-amount-transfer-para element */
+#user-amount-transfer-para {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Style the user-amount and user-amount-transfer-new elements */
+#user-amount, #user-amount-transfer-new {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Style the user-amount-transfer-new button */
+#user-amount-transfer-new {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style the user-transfer-para element */
+#user-transfer-para {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Style the user-reset-pin-para element */
+#user-reset-pin-para {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Style the user-reset-pin-old and user-reset-pin--verify-button elements */
+#user-reset-pin-old, #user-reset-pin--verify-button {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Style the error message for old pin */
+#error-message-old {
+    color: red;
+}
+
+/* Style the user-reset-pin-response paragraph */
+#user-reset-pin-response {
+    color: green;
+}
+
+/* Style the user-submit-new-pin-para element */
+#user-submit-new-pin-para {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Style the user-reset-pin-new and user-submit-new-pin-button elements */
+#user-reset-pin-new, #user-submit-new-pin-button {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Style the error message for new pin */
+#error-message-new {
+    color: red;
+}
+
+/* Style the user-update-pin-response paragraph */
+#user-update-pin-response {
+    color: green;
+}
+
+/* Style the user-next-proceed-para element */
+#user-next-proceed-para {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Style the user-next-proceed-button-yes and user-next-proceed-button-no buttons */
+#user-next-proceed-button-yes, #user-next-proceed-button-no {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style the user-thankyou paragraph */
+#user-thankyou {
+    font-size: 24px;
+    color: green;
+    margin-top: 20px;
+}
